@@ -8,7 +8,7 @@
 
 > 通过与谷歌学术（Google Scholar）比对核验 BibTeX 引用，检测 AI 幻觉和虚假参考文献。
 
-[English](README.md) | [简体中文](README_zh.md)
+[English](README.md) | [简体中文](README_CN.md)
 
 ## 为什么选择 ScholarBib？
 

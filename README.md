@@ -8,7 +8,7 @@
 
 > Verify BibTeX citations with Google Scholar to detect AI hallucinations and fake references.
 
-[English](README.md) | [简体中文](README_zh.md)
+[English](README.md) | [简体中文](README_CN.md)
 
 ## Why ScholarBib?
 
