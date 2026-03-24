@@ -1,4 +1,4 @@
-# ScholarBib - AI Hallucination Citation Verifier
+# VeriBib - AI Hallucination Citation Verifier
 
 <p align="center">
   <img src="https://img.shields.io/badge/LLM_Support-8%2B-green" alt="LLM Support">
@@ -10,11 +10,11 @@
 
 [English](README.md) | [简体中文](README_CN.md)
 
-## Why ScholarBib?
+## Why VeriBib?
 
 With the widespread adoption of LLMs (like ChatGPT, Claude, and DeepSeek) in academic writing, a critical problem has emerged: **Citation Hallucination**. AI models frequently invent plausible-sounding but entirely fake papers, mix up real authors with incorrect titles, or hallucinate non-existent publication venues. 
 
-**ScholarBib** is designed to act as an automated fact-checker for your reference list. It helps researchers verify their BibTeX citations by:
+**VeriBib** is designed to act as an automated fact-checker for your reference list. It helps researchers verify their BibTeX citations by:
 
 - Cross-referencing citations against Google Scholar to detect completely fabricated papers.
 - Identifying "partial hallucinations" (e.g., real paper title, but hallucinated authors or publication year).

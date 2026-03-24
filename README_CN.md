@@ -1,4 +1,4 @@
-# ScholarBib - AI 论文引用核验工具
+# VeriBib - AI 论文引用核验工具
 
 <p align="center">
   <img src="https://img.shields.io/badge/LLM_Support-8%2B-green" alt="LLM Support">
@@ -10,11 +10,11 @@
 
 [English](README.md) | [简体中文](README_CN.md)
 
-## 为什么选择 ScholarBib？
+## 为什么选择 VeriBib？
 
 随着大语言模型（如 ChatGPT、Claude 和 DeepSeek）在学术写作中的广泛应用，一个严重的问题浮出水面：**引用幻觉（Citation Hallucination）**。AI 模型经常捏造听起来很合理但完全虚假的论文，将真实的作者与错误的标题混搭，或者幻觉出不存在的出版场所（期刊/会议）。
 
-**ScholarBib** 旨在作为参考文献列表的自动化事实核查工具。它通过以下方式帮助研究人员核验其 BibTeX 引用：
+**VeriBib** 旨在作为参考文献列表的自动化事实核查工具。它通过以下方式帮助研究人员核验其 BibTeX 引用：
 
 - 将引用与谷歌学术进行交叉比对，检测完全捏造的虚假论文。
 - 识别“部分幻觉”（例如：论文标题是真实的，但作者或出版年份是 AI 幻觉捏造的）。
