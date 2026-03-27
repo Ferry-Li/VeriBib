@@ -13,6 +13,10 @@ USE_LLM_FOR_VENUE_ABBR = True   # Use LLM for venue abbreviation
 MAX_RETRY = 999               # Retry on network error
 SLEEP_TIME = 1                # Request interval in seconds
 
+# ====================== Matching Settings ======================
+# Maximum word differences to consider for matching (tried in order)
+TITLE_MAX_WORD_DIFF = 3  # Try exact, 1-word diff, 2-word diff, 3-word diff
+
 # ====================== File Paths ======================
 BIB_FILE = "test.bib" # Input BibTeX file
 OUTPUT_BIB = "output_updated.bib" # Output BibTeX file

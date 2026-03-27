@@ -93,13 +93,19 @@ def export_md(results, output_path=None):
     # Updated fields to show
     upd_keys = ["title", "author", "year", "journal", "booktitle", "doi"]
 
+    # Count statuses
+    total = len(results)
+    up_to_date = sum(1 for r in results if "Up-to-date" in r["status"])
+    mismatch = sum(1 for r in results if "Mismatch" in r["status"])
+    not_found = sum(1 for r in results if "Not found" in r["status"])
+
     # Build header
     md = "# BibTeX Verification Report\n\n"
     md += "## Summary\n"
-    md += f"- Total: {len(results)}\n"
-    up_to_date = sum(1 for r in results if "Up-to-date" in r["status"])
-    md += f"- Up-to-date: {up_to_date}\n"
-    md += f"- Issues: {len(results) - up_to_date}\n\n"
+    md += f"- **Total**: {total}\n"
+    md += f"- ✅ **Up-to-date**: {up_to_date}\n"
+    md += f"- ⚠️ **Mismatch**: {mismatch}\n"
+    md += f"- ❌ **Not found**: {not_found}\n\n"
 
     md += "## Details\n"
     md += "| Status | Key | " + " | ".join([f"Orig {k}" for k in orig_keys]) + " | " + " | ".join([f"New {k}" for k in upd_keys]) + " | SS Link |\n"

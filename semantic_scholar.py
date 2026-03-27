@@ -8,10 +8,13 @@ from config import SS_API_KEY
 def search_ss(title):
     """Search Semantic Scholar for a paper by title."""
     url = "https://api.semanticscholar.org/graph/v1/paper/search"
-    headers = {"x-api-key": SS_API_KEY}
+    headers = {}
+    if SS_API_KEY:
+        headers["x-api-key"] = SS_API_KEY
+
     params = {
         "query": title,
-        "limit": 5,
+        "limit": 10,
         "fields": "title,year,venue,externalIds,authors,paperId"
     }
 
@@ -34,7 +37,7 @@ def search_ss(title):
             # Rate limit / server error - retry
             if res.status_code in (429, 500, 502, 503, 504):
                 print(f"Server busy, retrying {attempt+1}/{max_retries}")
-                time.sleep(2)
+                time.sleep(3)
                 continue
 
             # Other errors (404, 403, 401, etc.) - no retry
@@ -47,4 +50,40 @@ def search_ss(title):
 
     # Max retries exceeded - return None
     print("Multiple retries failed, skipping")
+    return None
+
+
+def search_by_author_title(author_lastname, title_words, year=None):
+    """Fallback search using author and title keywords."""
+    url = "https://api.semanticscholar.org/graph/v1/paper/search"
+
+    headers = {}
+    if SS_API_KEY:
+        headers["x-api-key"] = SS_API_KEY
+
+    # Build query from title words and author
+    query_parts = [author_lastname] + title_words[:5]  # Limit keywords
+    query = " ".join(query_parts)
+    if year:
+        query += f" {year}"
+
+    params = {
+        "query": query,
+        "limit": 10,
+        "fields": "title,year,venue,externalIds,authors,paperId"
+    }
+
+    try:
+        res = requests.get(
+            url,
+            headers=headers,
+            params=params,
+            verify=False,
+            timeout=20
+        )
+        if res.status_code == 200:
+            return res.json()
+    except:
+        pass
+
     return None

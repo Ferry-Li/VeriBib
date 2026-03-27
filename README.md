@@ -83,19 +83,26 @@ python main.py input.bib --no-output --no-report
 ## Output Example
 
 ### Markdown Report
-| Status | Key | Orig title | New title | Orig journal | New journal | SS Link |
-|--------|-----|------------|-----------|--------------|-------------|---------|
-| ✅ Up-to-date | li2024size | Size-invariance matters... | Size-invariance Matters... | arXiv preprint | ICML | [Link] |
-| ⚠️ Mismatch | bao2025towards | Towards Size-invariant... | - | IEEE TPAMI | - | - |
+| Status | Key | Orig author | Orig journal | Orig title | Orig year | New title | New author | New year | New journal | New booktitle | New doi | SS Link |
+|--------|----|---|---|---|---|---|---|---|---|---|---|--------|
+| ⚠️ Mismatch | radford2021learning | Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and others | arXiv preprint arXiv:2103.00020 | Learning Transferable Visual Models From Natural Language Supervision | 2021 | Learning Transferable Visual Models From Natural Language Supervision | Alec Radford and Jong Wook Kim and Chris Hallacy and A. Ramesh and Gabriel Goh and S. Agarwal and G. Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and I. Sutskever | 2021 | International Conference on Machine Learning | ICML | - | - |
 
 ### Optimized BibTeX
 ```bibtex
-@article{li2024size,
-  title={Size-invariance Matters: Rethinking Metrics and Losses...},
-  author={Feiran Li and Qianqian Xu and ...},
-  journal={ICML},
-  year={2024},
-  doi={10.48550/arXiv.2405.09782},
+# Original BibTeX
+@article{radford2021learning,
+  title={Learning Transferable Visual Models From Natural Language Supervision},
+  author={Radford, Alec and Kim, Jong Wook and Hallacy, Chris and Ramesh, Aditya and Goh, Gabriel and Agarwal, Sandhini and Sastry, Girish and Askell, Amanda and Mishkin, Pamela and Clark, Jack and others},
+  journal={arXiv preprint arXiv:2103.00020},
+  year={2021}
+}
+
+# Optimized BibTex
+@inproceedings{radford2021learning,
+  title={Learning Transferable Visual Models From Natural Language Supervision},
+  author={Alec Radford and Jong Wook Kim and Chris Hallacy and A. Ramesh and Gabriel Goh and S. Agarwal and G. Sastry and Amanda Askell and Pamela Mishkin and Jack Clark and Gretchen Krueger and I. Sutskever},
+  booktitle={ICML},
+  year={2021},
 }
 ```
 
