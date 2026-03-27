@@ -1,6 +1,10 @@
 # VeriBib - AI Citation Verification Tool
 
 <p align="center">
+  <img src="VeriBib.png" alt="VeriBib" width="600">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/LLM_Support-6%2B-green" alt="LLM Support">
   <img src="https://img.shields.io/badge/Python-3.10+-blue" alt="Python">
   <img src="https://img.shields.io/badge/License-MIT-orange" alt="License">
